@@ -1,10 +1,30 @@
-﻿namespace Behavioral_Pattern_part_2
+﻿using StatePattern;
+
+namespace Behavioral_Pattern_part_2
 {
-    internal class Program
+    namespace MainProject
     {
-        static void Main(string[] args)
+        class Program
         {
-            Console.WriteLine("Hello, World!");
+            static void Main(string[] args)
+            {
+                VendingMachine vendingMachine = new VendingMachine(3);
+
+                vendingMachine.SelectProduct();
+                vendingMachine.InsertMoney(1.50m);
+                vendingMachine.DispenseProduct();
+
+                vendingMachine.SelectProduct();
+                vendingMachine.InsertMoney(1.00m);
+                vendingMachine.DispenseProduct();
+
+                vendingMachine.SelectProduct();
+                vendingMachine.InsertMoney(2.00m);
+                vendingMachine.DispenseProduct();
+
+                vendingMachine.SelectProduct();
+                vendingMachine.DispenseProduct();
+            }
         }
     }
 }
