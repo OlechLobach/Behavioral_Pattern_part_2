@@ -1,10 +1,23 @@
-﻿namespace Behavioral_Pattern_part_2
+﻿using MementoPatternClasses;
+
+namespace MementoPatternMain
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            TextEditor editor = new TextEditor();
+            Caretaker caretaker = new Caretaker();
+
+            editor.Text = "First Line";
+            caretaker.AddMemento(editor.Save());
+
+            editor.Text = "Second Line";
+            caretaker.AddMemento(editor.Save());
+
+            editor.Text = "Third Line";
+
+            editor.Restore(caretaker.GetMemento());
         }
     }
 }
